@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Império Lord | Agência de Marketing Digital</title>
+  <meta name="description" content="Transformamos sua empresa em uma máquina de vendas. Marketing, tráfego pago, criação de sites, gestão, branding e vendas em um único lugar.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">IMPÉRIO LORD</div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+  </div>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-text">IMPÉRIO</span>
+        <span class="logo-accent">LORD</span>
+      </a>
+      
+      <div class="nav-menu" id="nav-menu">
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#planos" class="nav-link">Planos</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </div>
+      
+      <div class="nav-actions">
+        <a href="https://wa.me/5594984361268" class="btn btn-primary nav-cta" id="nav-cta">
+          <span>Falar com Consultor</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-noise"></div>
+      <div class="hero-lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+    
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Agência de Marketing Digital</span>
+      </div>
+      
+      <h1 class="hero-title">
+        <span class="title-line">Transformamos sua</span>
+        <span class="title-line">empresa em uma</span>
+        <span class="title-line title-accent">máquina de vendas.</span>
+      </h1>
+      
+      <p class="hero-subtitle" id="hero-subtitle">
+        Marketing, tráfego pago, criação de sites, gestão, branding e vendas em um único lugar.
+      </p>
+      
+<div class="hero-ctas">
+  <a href="/orcamento.html" class="btn btn-primary btn-lg" id="hero-cta-primary">
+    <span>Calcular Meu Projeto</span>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M5 12h14M12 5l7 7-7 7"/>
+    </svg>
+  </a>
+  <a href="#cases" class="btn btn-outline btn-lg" id="hero-cta-secondary">
+    <span>Ver Nossos Trabalhos</span>
+  </a>
+</div>
+      
+      <div class="hero-stats" id="hero-stats">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+    
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Lead Retention System Section -->
+  <section class="lead-retention" id="lead-retention">
+    <div class="container">
+      <div class="section-header section-header-center">
+        <span class="section-tag">O Problema que Resolvemos</span>
+        <h2 class="section-title">
+          <span>Seus clientes não esquecem</span>
+          <span class="text-accent">mais de você</span>
+        </h2>
+        <p class="section-desc">
+          Seus clientes passam por você todos os dias, entram em contato e até chegam a comprar.
+          Mas depois você entra em uma maré onde o cliente não lembra mais de você.
+        </p>
+      </div>
+
+      <div class="lead-retention-visual">
+        <div class="lead-box">
+          <div class="lead-animation" id="lead-animation">
+            <!-- Leads animados aparecerão aqui -->
+          </div>
+          <div class="box-label">Seus Leads</div>
+        </div>
+        <div class="retention-solution">
+          <div class="solution-icon">💎</div>
+          <h3>Sistema Império Lord</h3>
+          <p>
+            Aqui na <strong>Império Lord</strong> temos um sistema que faz o seu cliente ser lembrado
+            depois de 20 dias que o lead foi captado. Nosso sistema preza por ter dados dele como:
+          </p>
+          <ul class="solution-features">
+            <li><span class="check-icon">✓</span> Nome completo</li>
+            <li><span class="check-icon">✓</span> Contato direto</li>
+            <li><span class="check-icon">✓</span> Última compra</li>
+            <li><span class="check-icon">✓</span> Histórico de interações</li>
+          </ul>
+          <p class="solution-highlight">
+            Com isso trabalhamos mensagens que são enviadas automaticamente
+            para fazer com que esse cliente retorne e volte a ser ativo!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits" id="beneficios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Por que escolher a Império Lord?</span>
+        <h2 class="section-title">
+          <span>Diferenciais que</span>
+          <span class="text-accent">fazem a diferença</span>
+        </h2>
+      </div>
+
+      <div class="benefits-grid" id="benefits-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Section -->
+  <section class="clients" id="clientes">
+    <div class="container">
+      <div class="section-header section-header-center">
+        <span class="section-tag">Confiam em nosso trabalho</span>
+        <h2 class="section-title">
+          <span>Clientes que</span>
+          <span class="text-accent">transformamos</span>
+        </h2>
+      </div>
+
+      <div class="clients-showcase">
+        <div class="client-display" id="client-display">
+          <!-- Client name will be populated by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="servicos">
+    <div class="container">
+      <div class="section-header section-header-center">
+        <span class="section-tag">O que fazemos</span>
+        <h2 class="section-title">
+          <span>Soluções completas para</span>
+          <span class="text-accent">seu crescimento digital</span>
+        </h2>
+        <p class="section-desc">Cada serviço pensado estrategicamente para gerar resultado real para seu negócio.</p>
+      </div>
+      
+      <div class="services-grid" id="services-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Plans Section -->
+  <section class="plans" id="planos">
+    <div class="plans-bg">
+      <div class="plans-gradient"></div>
+    </div>
+
+    <div class="container">
+      <div class="section-header section-header-center section-header-light">
+        <span class="section-tag">Planos e Preços</span>
+        <h2 class="section-title">
+          <span>Escolha o plano ideal</span>
+          <span class="text-accent">para seu momento</span>
+        </h2>
+        <p class="section-desc">Planos flexíveis que crescem junto com sua empresa.</p>
+      </div>
+
+      <div class="plans-grid" id="plans-grid">
+        <!-- Populated by JS -->
+      </div>
+
+      <div class="plans-footer">
+        <p>Não encontrou o que precisa? <a href="#" class="link-gold" id="plans-custom-cta">Solicite uma proposta personalizada</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process" id="processo">
+    <div class="container">
+      <div class="section-header section-header-center">
+        <span class="section-tag">Como trabalhamos</span>
+        <h2 class="section-title">
+          <span>Nosso processo de</span>
+          <span class="text-accent">trabalho</span>
+        </h2>
+        <p class="section-desc">Metodologia clara e transparente do início ao fim.</p>
+      </div>
+      
+      <div class="process-timeline" id="process-timeline">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="sobre">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <span class="section-tag">Sobre nós</span>
+          <h2 class="section-title">
+            <span>Conheça a</span>
+            <span class="text-accent">Império Lord</span>
+          </h2>
+          <p class="about-text" id="about-text"></p>
+          
+          <div class="about-values" id="about-values">
+            <!-- Populated by JS -->
+          </div>
+          
+          <a href="https://wa.me/5594984361268" class="btn btn-primary" id="about-cta">
+            <span>Falar com a Equipe</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="about-visual">
+          <div class="about-card about-card-mission">
+            <span class="card-icon">🎯</span>
+            <h3>Missão</h3>
+            <p id="about-mission"></p>
+          </div>
+          <div class="about-card about-card-vision">
+            <span class="card-icon">🚀</span>
+            <h3>Visão</h3>
+            <p id="about-vision"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" id="contato">
+    <div class="cta-bg">
+      <div class="cta-gradient"></div>
+      <div class="cta-pattern"></div>
+    </div>
+    
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">
+          Pronto para transformar sua empresa?
+        </h2>
+        <p class="cta-text">
+          Fale agora com um consultor e descubra como podemos ajudar seu negócio a crescer.
+        </p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/5594984361268" class="btn btn-white btn-lg" id="final-cta-whatsapp">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span>WhatsApp</span>
+          </a>
+          <a href="https://wa.me/5594984361268" class="btn btn-outline-white btn-lg" id="final-cta-proposal">
+            <span>Solicitar Proposta</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cases" id="cases">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Portfólio</span>
+      <h2 class="section-title">
+        <span>Cases de</span>
+        <span class="text-accent">sucesso</span>
+      </h2>
+      <p class="section-desc">Resultados reais de empresas que confiaram na Império Lord.</p>
+    </div>
+    
+    <div class="cases-grid" id="cases-grid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+
+<!-- Testimonials Section -->
+<section class="testimonials" id="depoimentos">
+  <div class="container">
+    <div class="section-header section-header-center">
+      <span class="section-tag">Depoimentos</span>
+      <h2 class="section-title">
+        <span>O que nossos clientes</span>
+        <span class="text-accent">dizem sobre nós</span>
+      </h2>
+    </div>
+    
+    <div class="testimonials-slider" id="testimonials-slider">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo">
+            <span class="logo-text">IMPÉRIO</span>
+            <span class="logo-accent">LORD</span>
+          </a>
+          <p class="footer-tagline" id="footer-tagline"></p>
+          <div class="footer-social" id="footer-social">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Links Rápidos</h4>
+          <ul>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#planos">Planos</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#">Gestão de Redes</a></li>
+            <li><a href="#">Tráfego Pago</a></li>
+            <li><a href="#">Criação de Sites</a></li>
+            <li><a href="#">Branding</a></li>
+            <li><a href="#">Consultoria</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4>Contato</h4>
+          <ul>
+            <li id="footer-phone"></li>
+            <li id="footer-email"></li>
+            <li id="footer-address"></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Império Lord. Todos os direitos reservados.</p>
+        <p id="footer-cnpj"></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Service Modal -->
+  <div class="modal" id="service-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+      <div class="modal-header">
+        <span class="modal-icon" id="modal-icon"></span>
+        <h3 class="modal-title" id="modal-title"></h3>
+      </div>
+      <p class="modal-desc" id="modal-desc"></p>
+      <div class="modal-section">
+        <h4>O que entregamos</h4>
+        <ul class="modal-list" id="modal-deliverables"></ul>
+      </div>
+      <div class="modal-section">
+        <h4>Benefícios</h4>
+        <ul class="modal-list modal-list-benefits" id="modal-benefits"></ul>
+      </div>
+      <a href="#" class="btn btn-primary btn-block" id="modal-cta">
+        <span>Quero Contratar</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/5594984361268" class="whatsapp-float" id="whatsapp-float" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+<!-- Contact Popup -->
+<div class="contact-popup" id="contact-popup">
+  <div class="popup-overlay"></div>
+  <div class="popup-content">
+    <button class="popup-close" id="popup-close" aria-label="Fechar">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    
+    <div class="popup-header">
+      <h3>🎉 Oferta Especial!</h3>
+      <p>Aproveite nosso precinho especial para novos clientes</p>
+    </div>
+    
+    <div class="popup-special">
+      <div class="popup-special-title">Primeira Consulta Grátis</div>
+      <div class="popup-special-desc">+ Análise completa da sua presença digital</div>
+    </div>
+    
+    <form class="popup-form" id="popup-form">
+      <input 
+        type="text" 
+        id="popup-name" 
+        class="popup-input" 
+        placeholder="Seu nome" 
+        required
+      >
+      <input 
+        type="tel" 
+        id="popup-phone" 
+        class="popup-input" 
+        placeholder="Seu WhatsApp" 
+        required
+      >
+      <button type="submit" class="btn btn-primary btn-block">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span>Quero Aproveitar!</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+  <!-- Scripts -->
+  <script src="data/plans.js" charset="UTF-8"></script>
+  <script src="app.js" charset="UTF-8"></script>
+</body>
+</html>

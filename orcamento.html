@@ -1,0 +1,340 @@
+<!-- FILE: orcamento.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Orçamento | Império Lord</title>
+  <meta name="description" content="Calcule o investimento ideal para seu projeto digital. Descubra qual plano se encaixa perfeitamente nas suas necessidades.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="orcamento.css">
+</head>
+<body>
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-text">IMPÉRIO</span>
+        <span class="logo-accent">LORD</span>
+      </a>
+      
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-outline">
+          <span>Voltar ao Site</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="calculator-page">
+    <div class="calculator-hero">
+      <div class="container">
+        <h1 class="calculator-title">
+          <span>Calcule seu</span>
+          <span class="text-accent">Investimento</span>
+        </h1>
+        <p class="calculator-subtitle">
+          Responda algumas perguntas e descubra qual solução é ideal para seu negócio
+        </p>
+      </div>
+    </div>
+
+    <div class="calculator-container">
+      <div class="calculator-card">
+        <div class="calculator-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="progress-text">
+            <span id="currentStep">1</span>/<span id="totalSteps">5</span>
+          </div>
+        </div>
+
+        <div class="calculator-steps" id="calculatorSteps">
+          <!-- Step 1: Tipo de Projeto -->
+          <div class="step active" data-step="1">
+            <h2 class="step-title">Que tipo de projeto você precisa?</h2>
+            <div class="options-grid">
+              <label class="option-card">
+                <input type="radio" name="projectType" value="landing-motion" data-price="543.21" data-maintenance="100">
+                <div class="option-content">
+                  <div class="option-icon">🚀</div>
+                  <h3>Landing Page High-End</h3>
+                  <p>Site interativo com animações premium e foco em conversão</p>
+                  <div class="option-price">R$ 543,21</div>
+                </div>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="projectType" value="landing-vitrine" data-price="998.76" data-maintenance="200">
+                <div class="option-content">
+                  <div class="option-icon">🏪</div>
+                  <h3>Landing + Vitrine</h3>
+                  <p>Landing integrada com catálogo estático de produtos</p>
+                  <div class="option-price">R$ 998,76</div>
+                </div>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="projectType" value="landing-admin" data-price="1543.21" data-maintenance="300">
+                <div class="option-content">
+                  <div class="option-icon">⚙️</div>
+                  <h3>Landing + Painel Admin</h3>
+                  <p>Site com painel para gerenciar produtos e conteúdo</p>
+                  <div class="option-price">R$ 1.543,21</div>
+                  <div class="option-badge">Mais Escolhido</div>
+                </div>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="projectType" value="ecommerce" data-price="2543.21" data-maintenance="400">
+                <div class="option-content">
+                  <div class="option-icon">🛒</div>
+                  <h3>E-commerce Completo</h3>
+                  <p>Loja virtual com pagamentos, frete e área do cliente</p>
+                  <div class="option-price">R$ 2.543,21</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 2: Integração IA -->
+          <div class="step" data-step="2">
+            <h2 class="step-title">Deseja integração com Inteligência Artificial?</h2>
+            <p class="step-subtitle">IA para atendimento 24/7, agendamentos e automação de leads</p>
+            <div class="options-grid">
+              <label class="option-card">
+                <input type="radio" name="aiIntegration" value="none" data-setup="0" data-monthly="0">
+                <div class="option-content">
+                  <div class="option-icon">❌</div>
+                  <h3>Não preciso agora</h3>
+                  <p>Posso adicionar depois se necessário</p>
+                  <div class="option-price">R$ 0,00</div>
+                </div>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="aiIntegration" value="basic" data-setup="1500" data-monthly="300">
+                <div class="option-content">
+                  <div class="option-icon">🤖</div>
+                  <h3>IA Básica</h3>
+                  <p>Responde dúvidas simples sobre pedidos e entrega</p>
+                  <div class="option-price">
+                    <small>Setup:</small> R$ 1.500<br>
+                    <small>Mensal:</small> R$ 300
+                  </div>
+                </div>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="aiIntegration" value="medium" data-setup="3800" data-monthly="500">
+                <div class="option-content">
+                  <div class="option-icon">🧠</div>
+                  <h3>IA Média</h3>
+                  <p>IA Básica + Agendamentos + CRM + Áudios e Imagens</p>
+                  <div class="option-price">
+                    <small>Setup:</small> R$ 3.800<br>
+                    <small>Mensal:</small> R$ 500
+                  </div>
+                  <div class="option-badge">Popular</div>
+                </div>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="aiIntegration" value="advanced" data-setup="0" data-monthly="0">
+                <div class="option-content">
+                  <div class="option-icon">⚡</div>
+                  <h3>IA Avançada</h3>
+                  <p>Solução enterprise multicanal sob consulta</p>
+                  <div class="option-price">Sob Consulta</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 3: Serviços Mensais -->
+          <div class="step" data-step="3">
+            <h2 class="step-title">Precisa de gestão e conteúdo contínuo?</h2>
+            <p class="step-subtitle">Selecione os serviços mensais que precisa (pode marcar vários)</p>
+            <div class="options-grid options-grid-checkbox">
+              <label class="option-card">
+                <input type="checkbox" name="monthlyServices" value="trafego" data-monthly="350">
+                <div class="option-content">
+                  <div class="option-icon">🎯</div>
+                  <h3>Gestão de Tráfego Pago</h3>
+                  <p>Google Ads e Meta Ads gerenciados</p>
+                  <div class="option-price">R$ 350/mês</div>
+                </div>
+              </label>
+
+              <label class="option-card">
+                <input type="checkbox" name="monthlyServices" value="crm" data-monthly="50">
+                <div class="option-content">
+                  <div class="option-icon">📈</div>
+                  <h3>CRM</h3>
+                  <p>Plataforma de gestão de leads</p>
+                  <div class="option-price">R$ 50/mês</div>
+                </div>
+              </label>
+
+              <label class="option-card">
+                <input type="checkbox" name="monthlyServices" value="mkt" data-monthly="1350">
+                <div class="option-content">
+                  <div class="option-icon">📊</div>
+                  <h3>Gestão de Marketing</h3>
+                  <p>Analistas dedicados + campanhas completas</p>
+                  <div class="option-price">R$ 1.350/mês</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 4: Conteúdo -->
+          <div class="step" data-step="4">
+            <h2 class="step-title">Quantas peças de conteúdo por mês?</h2>
+            <p class="step-subtitle">Vídeos, artes e animações para redes sociais</p>
+            
+            <div class="content-inputs">
+              <div class="input-group">
+                <label>
+                  <span class="input-icon">🎬</span>
+                  <span class="input-label">Gravações de Vídeo</span>
+                  <span class="input-price">R$ 100/und</span>
+                </label>
+                <input type="number" name="gravacao" min="0" value="0" data-price="100">
+              </div>
+
+              <div class="input-group">
+                <label>
+                  <span class="input-icon">✂️</span>
+                  <span class="input-label">Edições de Vídeo (até 60s)</span>
+                  <span class="input-price">R$ 75/und</span>
+                </label>
+                <input type="number" name="edicao" min="0" value="0" data-price="75">
+              </div>
+
+              <div class="input-group">
+                <label>
+                  <span class="input-icon">🎨</span>
+                  <span class="input-label">Artes Estáticas</span>
+                  <span class="input-price">R$ 35/und</span>
+                </label>
+                <input type="number" name="artes" min="0" value="0" data-price="35">
+              </div>
+
+              <div class="input-group">
+                <label>
+                  <span class="input-icon">✨</span>
+                  <span class="input-label">Animações</span>
+                  <span class="input-price">R$ 100/und</span>
+                </label>
+                <input type="number" name="animacoes" min="0" value="0" data-price="100">
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5: Cadastro de Produtos -->
+          <div class="step" data-step="5">
+            <h2 class="step-title">Precisa cadastrar produtos?</h2>
+            <p class="step-subtitle">Se seu plano incluir catálogo, podemos cadastrar para você</p>
+            
+            <div class="content-inputs">
+              <div class="input-group">
+                <label>
+                  <span class="input-icon">📦</span>
+                  <span class="input-label">Cadastro Simples</span>
+                  <span class="input-price">R$ 2,00/produto</span>
+                </label>
+                <small>Nome, preço, 1 foto e descrição curta</small>
+                <input type="number" name="produtosSimples" min="0" value="0" data-price="2">
+              </div>
+
+              <div class="input-group">
+                <label>
+                  <span class="input-icon">📦</span>
+                  <span class="input-label">Cadastro Intermediário</span>
+                  <span class="input-price">R$ 5,00/produto</span>
+                </label>
+                <small>Simples + categorias, tags, SEO e tratamento de foto</small>
+                <input type="number" name="produtosIntermediario" min="0" value="0" data-price="5">
+              </div>
+
+              <div class="input-group">
+                <label>
+                  <span class="input-icon">📦</span>
+                  <span class="input-label">Cadastro Completo</span>
+                  <span class="input-price">R$ 10,00/produto</span>
+                </label>
+                <small>Intermediário + copy persuasiva e variações (tamanhos/cores)</small>
+                <input type="number" name="produtosCompleto" min="0" value="0" data-price="10">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="calculator-actions">
+          <button class="btn btn-outline" id="prevBtn" style="display: none;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            <span>Voltar</span>
+          </button>
+          <button class="btn btn-primary" id="nextBtn">
+            <span>Próximo</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="calculator-summary">
+        <div class="summary-card">
+          <h3 class="summary-title">Resumo do Investimento</h3>
+          
+          <div class="summary-section">
+            <div class="summary-label">Investimento Inicial</div>
+            <div class="summary-value" id="summaryInitial">R$ 0,00</div>
+          </div>
+
+          <div class="summary-section">
+            <div class="summary-label">Investimento Mensal</div>
+            <div class="summary-value" id="summaryMonthly">R$ 0,00</div>
+          </div>
+
+          <div class="summary-divider"></div>
+
+          <div class="summary-details" id="summaryDetails">
+            <p class="summary-placeholder">Selecione as opções para ver o resumo</p>
+          </div>
+
+          <div class="summary-total">
+            <div class="total-label">Total Primeiro Mês</div>
+            <div class="total-value" id="summaryTotal">R$ 0,00</div>
+          </div>
+
+          <button class="btn btn-primary btn-block" id="requestQuoteBtn" style="display: none;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span>Solicitar Orçamento via WhatsApp</span>
+          </button>
+        </div>
+
+        <div class="summary-notes">
+          <p><strong>💡 Dica:</strong> A manutenção mensal já inclui hospedagem, suporte técnico e ajustes no sistema.</p>
+          <p><strong>⚡ Rápido:</strong> Projetos iniciam em até 7 dias após aprovação.</p>
+          <p><strong>✅ Garantia:</strong> 30 dias de garantia total após entrega.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data/plans.js"></script>
+  <script src="orcamento.js"></script>
+</body>
+</html>
