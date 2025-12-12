@@ -448,6 +448,10 @@ cta: {
   quaternary: {
     text: "Ver Planos e Preços",
     link: "#planos"
+  },
+    whatsapp: {  // ✅ Separar WhatsApp em objeto próprio
+    number: "5594984361268",
+    defaultMessage: "Olá! Gostaria de saber mais sobre os serviços da Império Lord."
   }
 },
 

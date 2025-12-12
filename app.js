@@ -224,50 +224,41 @@ function populateContent() {
     `).join('');
   }
   
-  // PLANOS - CORRIGIDO PARA USAR priceLabel
-  const plansGrid = document.getElementById('plans-grid');
-  if (plansGrid && PLANS_DATA.plans) {
-    plansGrid.innerHTML = PLANS_DATA.plans.map(plan => `
-      <div class="plan-card ${plan.highlighted ? 'highlighted' : ''}" data-plan="${plan.id}">
-        ${plan.badge ? `<div class="plan-badge">${plan.badge}</div>` : ''}
-        <div class="plan-header">
-          <h3 class="plan-name">${plan.name}</h3>
-          <div class="plan-price">
-            ${plan.price 
-              ? `${PLANS_DATA.currency}${plan.price.toLocaleString('pt-BR', {minimumFractionDigits: 2})}` 
-              : `<span class="plan-price-label">${plan.priceLabel}</span>`}
-          </div>
-          <div class="plan-period">${plan.period}</div>
-          <p class="plan-desc">${plan.description}</p>
+// PLANOS - CORRIGIDO PARA IR PARA ORÇAMENTO
+const plansGrid = document.getElementById('plans-grid');
+if (plansGrid && PLANS_DATA.plans) {
+  plansGrid.innerHTML = PLANS_DATA.plans.map(plan => `
+    <div class="plan-card ${plan.highlighted ? 'highlighted' : ''}" data-plan="${plan.id}">
+      ${plan.badge ? `<div class="plan-badge">${plan.badge}</div>` : ''}
+      <div class="plan-header">
+        <h3 class="plan-name">${plan.name}</h3>
+        <div class="plan-price">
+          ${plan.price 
+            ? `${PLANS_DATA.currency}${plan.price.toLocaleString('pt-BR', {minimumFractionDigits: 2})}` 
+            : `<span class="plan-price-label">${plan.priceLabel}</span>`}
         </div>
-        <ul class="plan-features">
-          ${plan.features.map(feature => `
-            <li class="plan-feature ${!feature.included ? 'disabled' : ''}">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                ${feature.included
-                  ? '<path d="M20 6L9 17l-5-5"/>'
-                  : '<path d="M18 6L6 18M6 6l12 12"/>'}
-              </svg>
-              <span>${feature.text}</span>
-            </li>
-          `).join('')}
-        </ul>
-        <button class="plan-cta" data-plan="${plan.id}">${plan.cta.text}</button>
+        <div class="plan-period">${plan.period}</div>
+        <p class="plan-desc">${plan.description}</p>
       </div>
-    `).join('');
-    
-    // Adicionar eventos de click nos botões dos planos
-    plansGrid.querySelectorAll('.plan-cta').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const planId = btn.dataset.plan;
-        const plan = PLANS_DATA.plans.find(p => p.id === planId);
-        if (plan && plan.cta.whatsapp) {
-          openWhatsApp(plan.cta.message, plan.cta.whatsapp);
-        }
-      });
-    });
-  }
+      <ul class="plan-features">
+        ${plan.features.map(feature => `
+          <li class="plan-feature ${!feature.included ? 'disabled' : ''}">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              ${feature.included
+                ? '<path d="M20 6L9 17l-5-5"/>'
+                : '<path d="M18 6L6 18M6 6l12 12"/>'}
+            </svg>
+            <span>${feature.text}</span>
+          </li>
+        `).join('')}
+      </ul>
+      <a href="orcamento.html" class="plan-cta" data-plan="${plan.id}">${plan.cta.text}</a>
+    </div>
+  `).join('');
+  
+  // Não precisa mais de addEventListener, os links funcionam nativamente
+  console.log('✓ Planos configurados para ir para orcamento.html');
+}
   
   // CASES
   const casesGrid = document.getElementById('cases-grid');
